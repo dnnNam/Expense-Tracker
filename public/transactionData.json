@@ -1,0 +1,37 @@
+[
+  {
+    "id": "1",
+    "date": "2025-03-01",
+    "category": "Lương",
+    "amount": 15000000,
+    "type": "income"
+  },
+  {
+    "id": "2",
+    "date": "2025-03-02",
+    "category": "Ăn uống",
+    "amount": 500000,
+    "type": "expense"
+  },
+  {
+    "id": "3",
+    "date": "2025-03-03",
+    "category": "Giao thông",
+    "amount": 200000,
+    "type": "expense"
+  },
+  {
+    "id": "4",
+    "date": "2025-03-04",
+    "category": "Thưởng",
+    "amount": 2000000,
+    "type": "income"
+  },
+  {
+    "id": "5",
+    "date": "2025-03-05",
+    "category": "Mua sắm",
+    "amount": 1200000,
+    "type": "expense"
+  }
+]
