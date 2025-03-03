@@ -1,10 +1,19 @@
 // lấy danh sách từ localStorage về
-const getList = () => {
+export const getList = () => {
   return JSON.parse(localStorage.getItem("expense_tracker")) || [];
 };
 // thêm các item  lên local Storage
-const addItemToLS = (transactionList) => {
-  let list = getList();
-  list = [...list, ...transactionList];
-  localStorage.setItem("expense_tracker", JSON.stringify(list));
+export const addItemToLS = (transactionList) => {
+  const list = getList();
+  const newList = [...list, ...transactionList];
+  localStorage.setItem("expense_tracker", JSON.stringify(newList));
+  return newList;
+};
+
+// xóa giao dich theo id
+export const deleteTransaction = (id) => {
+  const list = getList();
+  const updateList = list.filter((transaction) => transaction.id !== id);
+  localStorage.setItem("expense_tracker", JSON.stringify(updateList));
+  return updateList;
 };
