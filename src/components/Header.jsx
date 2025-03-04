@@ -36,22 +36,26 @@ function Header(props) {
   console.log(balance);
 
   return (
-    <div className="max-w-md mx-auto p-6 bg-white shadow-lg rounded-lg">
-      <h2 className="text-xl font-semiblod">Expense Tracker</h2>
-      <h3 className="text-3xl font-bold  text-center my-3">
-        {balance.toLocaleString("vi-VN")}VND
+    <div className="max-w-md mx-auto p-6 bg-slate-300 shadow-lg rounded-lg">
+      <h2 className="text-sm font-semiblod text-center">Expense Tracker</h2>
+      <div className="text-sm pt-10">YOUR BALANCE</div>
+      <h3 className="text-xl font-bold  mb-3">
+        {balance.toLocaleString("vi-VN")} VND
       </h3>
 
-      {/* <div className="flex justify-between p-4 bg-gray-100 rounded-lg">
+      <div className="flex justify-between p-11 bg-zinc-50 rounded-lg">
         <div className="text-green-600 font-semibold">
-          INCOME
-          <br />${income.toFixed(2)}
+          <span className="text-slate-950"> INCOME</span>
+          <br />
+          {income.toLocaleString("vi-VN")} VND
         </div>
+        <div class="border-l border-gray-300 h-10 mt-1"></div>
         <div className="text-red-600 font-semibold">
-          EXPENSE
-          <br />${Math.abs(expense).toFixed(2)}
+          <span className="text-slate-950">EXPENSE</span>
+          <br />
+          {expense.toLocaleString("vi-VN")} VND
         </div>
-      </div> */}
+      </div>
     </div>
   );
 }
