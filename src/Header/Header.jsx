@@ -1,4 +1,4 @@
-import React, { use, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 
 // có nhiệm vụ hiển thị tổng số dư , thu nhập và chi tiêu
@@ -36,10 +36,10 @@ function Header(props) {
   console.log(balance);
 
   return (
-    <div className="max-w-md mx-auto p-6 bg-slate-300 shadow-lg rounded-lg">
+    <div className="bg-none">
       <h2 className="text-sm font-semiblod text-center">Expense Tracker</h2>
       <div className="text-sm pt-10">YOUR BALANCE</div>
-      <h3 className="text-xl font-bold  mb-3">
+      <h3 className="text-xl font  mb-3">
         {balance.toLocaleString("vi-VN")} VND
       </h3>
 
