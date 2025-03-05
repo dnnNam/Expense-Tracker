@@ -1,6 +1,6 @@
 import "./App.css";
 import ExpenseList from "./components/ExpenseList";
-import Header from "./Header/Header";
+import Header from "./components/Header/Header";
 import { getList } from "./store";
 function App() {
   const transactionList = getList();

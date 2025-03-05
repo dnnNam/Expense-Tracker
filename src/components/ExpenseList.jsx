@@ -22,20 +22,22 @@ function ExpenseList(props) {
         {transactions.map((transaction) => (
           <li
             key={transaction.id}
-            className="flex items-center justify-between"
+            className="flex items-center justify-between m-1 pl-4 bg-white shadow border-black "
           >
-            <span className="flex-1">{transaction.text}</span>
+            <span className="flex-1">{transaction.category}</span>
             <span
-              className={`font-medium ${
-                transaction.type === "income"
-                  ? "text-green-600"
-                  : "text-red-600"
-              }`}
+            // className={`font-medium ${
+            //   transaction.type === "income"
+            //     ? "text-green-600"
+            //     : "text-red-600"
+            // }`}
             >
               {transaction.type === "income"
                 ? `+${transaction.amount}`
                 : transaction.amount}
             </span>
+
+            <div class=" border-l border-gray-300 h-10 mt-1 w-4"></div>
           </li>
         ))}
       </ul>
