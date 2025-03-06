@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 ExpenseItem.propTypes = {
-  deleteFunc: PropTypes.func,
+  deleteFunc: PropTypes.func.isRequired,
   transaction: PropTypes.object.isRequired,
 };
 
@@ -13,12 +13,6 @@ ExpenseItem.defaultProps = {
 function ExpenseItem(props) {
   const { deleteFunc, transaction } = props;
 
-  function deleteTransaction(transaction) {
-    console.log("bấm rôi");
-
-    if (!deleteFunc) return;
-    deleteFunc(transaction.id);
-  }
   return (
     <div>
       <li
@@ -29,7 +23,7 @@ function ExpenseItem(props) {
           className="bg-red-500 text-white text-xs w-4 h-4  
         rounded-none absolute left-[-16px] 
         hidden group-hover:block"
-          onClick={() => deleteTransaction(transaction)}
+          onClick={() => deleteFunc(transaction.id)}
         >
           X
         </button>
@@ -38,7 +32,7 @@ function ExpenseItem(props) {
         <span className="mr-5">
           {transaction.type === "income"
             ? `+${transaction.amount}`
-            : transaction.amount}
+            : -transaction.amount}
         </span>
 
         <div

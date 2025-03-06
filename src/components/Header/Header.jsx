@@ -49,7 +49,7 @@ function Header(props) {
           <br />
           {income.toLocaleString("vi-VN")} VND
         </div>
-        <div class="border-l border-gray-300 h-10 mt-1"></div>
+        <div className="border-l border-gray-300 h-10 mt-1"></div>
         <div className="text-red-600 font-semibold">
           <span className="text-slate-950">EXPENSE</span>
           <br />
