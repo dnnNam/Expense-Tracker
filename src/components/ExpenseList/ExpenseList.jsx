@@ -1,29 +1,26 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import ExpenseItem from "../ExpenseItem/ExpenseItem";
-import { deleteTransaction } from "../../store";
 
 // danh sách chi tiêu
 
 ExpenseList.propTypes = {
   transactions: PropTypes.array.isRequired,
+  onDelete: PropTypes.func.isRequired,
 };
 
 ExpenseList.defaultProps = {
   transactions: [],
+  onDelete: null,
 };
 
 function ExpenseList(props) {
-  const { transactions } = props;
-  const [transactionList, setTransactionList] = useState(transactions);
+  const { transactions, onDelete } = props;
 
   function deleteItem(_id) {
-    // xóa item trong local Storage
-    deleteTransaction(_id);
+    if (!onDelete) return;
     // xóa item trên UI
-    const updateTransactions = transactionList.filter((t) => t.id !== _id);
-
-    setTransactionList(updateTransactions);
+    onDelete(_id);
   }
 
   return (
@@ -32,11 +29,11 @@ function ExpenseList(props) {
       <div className="border-b border-gray-900 mb-5"></div>
       <div>
         <ul>
-          {transactionList.map((transaction) => (
+          {transactions.map((transaction) => (
             <ExpenseItem
               key={transaction.id}
               transaction={transaction}
-              deleteFunc={deleteItem}
+              onDelete={deleteItem}
             />
           ))}
         </ul>

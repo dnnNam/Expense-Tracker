@@ -13,7 +13,6 @@ Header.defaultProps = {
 
 function Header(props) {
   const { transactions } = props;
-  console.log(transactions);
 
   const [income, setIncome] = useState(0);
   const [expense, setExpense] = useState(0);
@@ -33,7 +32,6 @@ function Header(props) {
     setIncome(totalIncome);
     setExpense(totalExpense);
   }, [transactions]);
-  console.log(balance);
 
   return (
     <div className="bg-none">

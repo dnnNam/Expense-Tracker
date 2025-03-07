@@ -1,8 +1,11 @@
+import { useState } from "react";
 import "./App.css";
+import ExpenseFilter from "./components/ExpenseFilter/ExpenseFilter";
 import ExpenseList from "./components/ExpenseList/ExpenseList";
 import Header from "./components/Header/Header";
 import { getList } from "./store";
 import { addItemToLS } from "./store";
+import { handleChange, handleDelete } from "./utils";
 function App() {
   const transactionList = getList();
 
@@ -60,10 +63,27 @@ function App() {
 
   // addItemToLS(transactions);
 
+  const [transaction, setTransaction] = useState(transactionList);
+
+  const handleFilterChange = (filter) => {
+    console.log(filter);
+
+    const filteredTransaction = handleChange(filter, transactionList);
+    console.log(filteredTransaction);
+
+    setTransaction(filteredTransaction);
+  };
+
+  console.log(transaction);
+
   return (
     <div className=" max-w-md mx-auto p-6 bg-slate-100 shadow-lg rounded-lg">
-      {<Header transactions={transactionList} />}
-      <ExpenseList transactions={transactionList} />
+      {<Header transactions={transaction} />}
+      <ExpenseFilter onFilterChange={handleFilterChange} />
+      <ExpenseList
+        transactions={transaction}
+        onDelete={(id) => handleDelete(id, setTransaction)}
+      />
     </div>
   );
 }
