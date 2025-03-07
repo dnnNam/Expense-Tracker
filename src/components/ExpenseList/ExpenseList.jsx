@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import ExpenseItem from "./ExpenseItem";
-import { deleteTransaction } from "../store";
+import ExpenseItem from "../ExpenseItem/ExpenseItem";
+import { deleteTransaction } from "../../store";
 
 // danh sách chi tiêu
 

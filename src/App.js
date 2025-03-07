@@ -1,5 +1,5 @@
 import "./App.css";
-import ExpenseList from "./components/ExpenseList";
+import ExpenseList from "./components/ExpenseList/ExpenseList";
 import Header from "./components/Header/Header";
 import { getList } from "./store";
 import { addItemToLS } from "./store";
