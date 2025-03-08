@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import ExpenseItem from "../ExpenseItem/ExpenseItem";
-
 // danh sách chi tiêu
 
 ExpenseList.propTypes = {
