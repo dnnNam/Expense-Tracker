@@ -6,6 +6,7 @@ import Header from "./components/Header/Header";
 import { getList } from "./store";
 import { addItemToLS } from "./store";
 import { handleChange, handleDelete } from "./utils";
+import ExpenseForm from "./components/ExpenseForm/ExpenseForm";
 function App() {
   const transactionList = getList();
 
@@ -84,6 +85,7 @@ function App() {
         transactions={transaction}
         onDelete={(id) => handleDelete(id, setTransaction)}
       />
+      <ExpenseForm />
     </div>
   );
 }
