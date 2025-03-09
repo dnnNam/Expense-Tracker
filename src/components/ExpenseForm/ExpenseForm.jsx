@@ -53,14 +53,14 @@ function ExpenseForm(props) {
         ></input>
       </div>
       <div className="mb-4">
-        <label className="block text-gray-600 font-medium">📂 Danh mục:</label>
+        <label className="block text-gray-600 font-medium">Danh mục:</label>
         <select
           value={category}
           onChange={(e) => setCategory(e.target.value)}
           required
-          className="border border-gray-300 rounded-lg p-2 w-full focus:ring-2 focus:ring-blue-400"
+          className="border border-gray-300 rounded-lg p-2 w-full  focus:ring-blue-400 focus:outline-none focus:ring-0 appearance-none"
         >
-          <option value=""> choose your category </option>
+          <option value=""> Choose your category </option>
           <option value="Food"> Food</option>
           <option value="Salary"> Salary</option>
           <option value="Transport"> Transport</option>

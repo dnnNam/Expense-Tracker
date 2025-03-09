@@ -36,7 +36,7 @@ function ExpenseItem(props) {
         </span>
 
         <div
-          className={`  absolute h-full mt-1 w-1 right-0 top-[-3.8px]
+          className={`absolute h-full mt-1 w-1 right-0 top-[-3.8px]
         bg ${transaction.type === "income" ? "bg-green-500 " : "bg-red-500"}`}
         ></div>
       </li>

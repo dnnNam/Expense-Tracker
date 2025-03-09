@@ -43,7 +43,7 @@ function ExpenseFilter(props) {
         <select
           name="category"
           onChange={handleChange}
-          className="appearance-none w-full px-4 py-2 border rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 pr-10"
+          className="appearance-none w-full px-4 py-2 border rounded-lg bg-white  focus:ring-blue-500 pr-10 focus:outline-none focus:ring-0"
         >
           <option value="">Tất cả</option>
           <option value="Food">Food</option>
