@@ -32,7 +32,7 @@ function ExpenseList(props) {
             <ExpenseItem
               key={transaction.id}
               transaction={transaction}
-              onDelete={deleteItem}
+              deleteFunc={deleteItem}
             />
           ))}
         </ul>

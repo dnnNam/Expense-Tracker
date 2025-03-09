@@ -1,4 +1,4 @@
-import { deleteTransaction } from "./store";
+import { addItemToLS, deleteTransaction } from "./store";
 import { getList } from "./store";
 export const handleChange = (filter, transactionList) => {
   return transactionList.filter((transaction) => {
@@ -18,4 +18,10 @@ export const handleDelete = (_id, setTransaction) => {
   const updateList = getList();
 
   setTransaction(updateList);
+};
+
+export const onSubmit = (newExpense, transaction, setTransaction) => {
+  const updateTransactions = [...transaction, newExpense];
+  setTransaction(updateTransactions);
+  addItemToLS(updateTransactions);
 };

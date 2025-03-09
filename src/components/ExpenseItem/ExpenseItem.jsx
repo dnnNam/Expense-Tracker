@@ -7,7 +7,7 @@ ExpenseItem.propTypes = {
 };
 
 ExpenseItem.defaultProps = {
-  deleteFunc: null,
+  deleteFunc: () => {},
 };
 
 function ExpenseItem(props) {
