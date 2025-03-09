@@ -1,10 +1,7 @@
 import React, { useState } from "react";
-import PropTypes from "prop-types";
+import { propsTypeForm } from "../../expenseType";
 
 // form nhập chi tiêu
-ExpenseForm.propTypes = {
-  handleSubmit: PropTypes.func.isRequired,
-};
 
 function ExpenseForm(props) {
   const { handleSubmit } = props;
@@ -88,5 +85,7 @@ function ExpenseForm(props) {
     </form>
   );
 }
+
+ExpenseForm.propTypes = propsTypeForm;
 
 export default ExpenseForm;

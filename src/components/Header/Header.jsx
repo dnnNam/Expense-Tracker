@@ -1,15 +1,7 @@
 import React, { useEffect, useState } from "react";
-import PropTypes from "prop-types";
+import { propsTypeHeader } from "../../expenseType";
 
 // có nhiệm vụ hiển thị tổng số dư , thu nhập và chi tiêu
-
-Header.propTypes = {
-  transactions: PropTypes.func,
-};
-
-Header.defaultProps = {
-  transactions: [],
-};
 
 function Header(props) {
   const { transactions } = props;
@@ -57,5 +49,7 @@ function Header(props) {
     </div>
   );
 }
+
+Header.propTypes = propsTypeHeader;
 
 export default Header;

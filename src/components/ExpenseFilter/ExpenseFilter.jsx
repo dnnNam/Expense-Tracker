@@ -1,15 +1,7 @@
 import React, { useState } from "react";
-import PropTypes from "prop-types";
+import { propsTypeFilter } from "../../expenseType";
 
 // có nhiệm vụ lọc ra các giao dịch ăn uống , thể thao theo ngày tháng năm
-
-ExpenseFilter.propTypes = {
-  onFilterChange: PropTypes.func,
-};
-
-ExpenseFilter.defaultProps = {
-  onFilterChange: null,
-};
 
 function ExpenseFilter(props) {
   const { onFilterChange } = props;
@@ -25,7 +17,9 @@ function ExpenseFilter(props) {
   };
   return (
     <div>
-      <h3 className="font-semibold mt-3">Filter Transaction</h3>
+      <h3 className="text-xl font-semibold m-2 text-gray-800">
+        Filter Transaction
+      </h3>
       <div className="border-b border-gray-900 mb-5"></div>
 
       <div>
@@ -57,5 +51,7 @@ function ExpenseFilter(props) {
     </div>
   );
 }
+
+ExpenseFilter.propTypes = propsTypeFilter;
 
 export default ExpenseFilter;

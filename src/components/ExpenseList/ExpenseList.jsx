@@ -1,17 +1,7 @@
-import React, { useState } from "react";
-import PropTypes from "prop-types";
+import React from "react";
+import { propsTypeList } from "../../expenseType";
 import ExpenseItem from "../ExpenseItem/ExpenseItem";
 // danh sách chi tiêu
-
-ExpenseList.propTypes = {
-  transactions: PropTypes.array.isRequired,
-  onDelete: PropTypes.func.isRequired,
-};
-
-ExpenseList.defaultProps = {
-  transactions: [],
-  onDelete: null,
-};
 
 function ExpenseList(props) {
   const { transactions, onDelete } = props;
@@ -24,7 +14,7 @@ function ExpenseList(props) {
 
   return (
     <div>
-      <h3 className="font-semibold mt-3 ">History</h3>
+      <h3 className="text-xl font-semibold m-2 text-gray-800 ">History</h3>
       <div className="border-b border-gray-900 mb-5"></div>
       <div>
         <ul>
@@ -40,5 +30,7 @@ function ExpenseList(props) {
     </div>
   );
 }
+
+ExpenseList.propTypes = propsTypeList;
 
 export default ExpenseList;

@@ -1,14 +1,5 @@
 import React from "react";
-import PropTypes from "prop-types";
-
-ExpenseItem.propTypes = {
-  deleteFunc: PropTypes.func.isRequired,
-  transaction: PropTypes.object.isRequired,
-};
-
-ExpenseItem.defaultProps = {
-  deleteFunc: () => {},
-};
+import { propsTypeItem } from "../../expenseType";
 
 function ExpenseItem(props) {
   const { deleteFunc, transaction } = props;
@@ -43,5 +34,7 @@ function ExpenseItem(props) {
     </div>
   );
 }
+
+ExpenseItem.propTypes = propsTypeItem;
 
 export default ExpenseItem;
