@@ -75,7 +75,11 @@ function App() {
     setTransaction(filteredTransaction);
   };
 
-  console.log(transaction);
+  const onSubmit = (newExpense) => {
+    const updateTransactions = [...transaction, newExpense];
+    setTransaction(updateTransactions);
+    addItemToLS(updateTransactions);
+  };
 
   return (
     <div className=" max-w-md mx-auto p-6 bg-slate-100 shadow-lg rounded-lg">
@@ -85,7 +89,7 @@ function App() {
         transactions={transaction}
         onDelete={(id) => handleDelete(id, setTransaction)}
       />
-      <ExpenseForm />
+      <ExpenseForm handleSubmit={onSubmit} />
     </div>
   );
 }

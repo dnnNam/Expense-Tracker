@@ -37,27 +37,30 @@ function ExpenseForm(props) {
 
   return (
     <form onSubmit={onSubmit}>
-      <h3 className="font-semibold mt-3">Add New Transaction</h3>
+      <h3 className="text-xl font-semibold m-2 text-gray-800">
+        Add New Transaction
+      </h3>
       <div className="border-b border-gray-900 mb-5"></div>
 
-      <div>
-        <label>Date: </label>
+      <div className="mb-4">
+        <label className="block text-gray-600 font-medium">Date: </label>
         <input
           type="date"
           value={date}
           onChange={(e) => setDate(e.target.value)}
           required
-          className="border p-2 rounded w-full"
+          className=" border-gray-300 rounded-lg p-2 w-full focus:ring-2 focus:ring-blue-400 [&::-webkit-calendar-picker-indicator]:hidden "
         ></input>
       </div>
-      <div>
-        <label>📂 Danh mục:</label>
+      <div className="mb-4">
+        <label className="block text-gray-600 font-medium">📂 Danh mục:</label>
         <select
           value={category}
           onChange={(e) => setCategory(e.target.value)}
           required
+          className="border border-gray-300 rounded-lg p-2 w-full focus:ring-2 focus:ring-blue-400"
         >
-          <option value="">-- choose your category --</option>
+          <option value=""> choose your category </option>
           <option value="Food"> Food</option>
           <option value="Salary"> Salary</option>
           <option value="Transport"> Transport</option>
@@ -66,14 +69,14 @@ function ExpenseForm(props) {
           <option value="Entertainment">Entertainment</option>
         </select>
       </div>
-      <div>
-        <label>Amount: </label>
+      <div className="mb-4">
+        <label className="block text-gray-600 font-medium">Amount: </label>
         <input
           type="number"
           value={amount}
           onChange={(e) => setAmount(Number(e.target.value))}
           required
-          className="border p-2 rounded w-full"
+          className="block text-gray-600 font-medium [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
         />
       </div>
       <button
