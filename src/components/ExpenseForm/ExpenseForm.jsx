@@ -7,7 +7,7 @@ ExpenseForm.propTypes = {
 };
 
 function ExpenseForm(props) {
-  const { handleSubmit, transactions } = props;
+  const { handleSubmit } = props;
   const [date, setDate] = useState("");
   const [category, setCategory] = useState("");
   const [amount, setAmount] = useState("");

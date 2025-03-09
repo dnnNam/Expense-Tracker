@@ -30,7 +30,12 @@ function ExpenseFilter(props) {
 
       <div>
         <label>Ngày: </label>
-        <input type="date" name="date" onChange={handleChange} />
+        <input
+          type="date"
+          name="date"
+          onChange={handleChange}
+          className=" border-gray-300 rounded-lg p-2 w-full focus:ring-2 focus:ring-blue-400 [&::-webkit-calendar-picker-indicator]:hidden"
+        />
       </div>
 
       <div>
