@@ -20,8 +20,14 @@ export const handleDelete = (_id, setTransaction) => {
   setTransaction(updateList);
 };
 
-export const onSubmit = (newExpense, transaction, setTransaction) => {
-  const updateTransactions = [...transaction, newExpense];
-  setTransaction(updateTransactions);
-  addItemToLS(updateTransactions);
+export const onSubmit = (newExpense, setTransaction) => {
+  // phải bỏ vào setTransaction để đồng bộ nếu không nó sẽ khi react không kịp state
+  // khi thêm phần tử thứ 2 nó sẽ bị thêm 1 lần phần cũ nữa
+
+  setTransaction((prevTransaction) => {
+    const updateTransactions = [...prevTransaction, newExpense];
+    console.log(updateTransactions);
+    addItemToLS(updateTransactions);
+    return updateTransactions;
+  });
 };

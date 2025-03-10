@@ -4,8 +4,7 @@ export const getList = () => {
 };
 // thêm các item  lên local Storage
 export const addItemToLS = (transactionList) => {
-  const list = getList();
-  const newList = [...list, ...transactionList];
+  const newList = [...transactionList];
   localStorage.setItem("expense_tracker", JSON.stringify(newList));
   return newList;
 };

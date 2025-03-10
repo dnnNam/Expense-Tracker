@@ -13,12 +13,15 @@ function ExpenseForm(props) {
 
     if (!date || !category || !amount) return;
 
+    const [year, day, month] = date.split("-");
+    const formattedDate = `${year}-${month}-${day}`;
+
     const type = ["Salary", "Freelance"].includes(category)
       ? "income"
       : "expense";
     const newExpense = {
-      id: Date.now(),
-      date,
+      id: crypto.randomUUID(),
+      date: formattedDate,
       category,
       amount: Number(amount),
       type,

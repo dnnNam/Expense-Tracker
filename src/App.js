@@ -7,6 +7,7 @@ import { getList } from "./store";
 
 import { handleChange, handleDelete, onSubmit } from "./utils";
 import ExpenseForm from "./components/ExpenseForm/ExpenseForm";
+import ExpenseChart from "./components/ExpenseChart/ExpenseChart";
 function App() {
   const transactionList = getList();
 
@@ -16,23 +17,24 @@ function App() {
     console.log(filter);
 
     const filteredTransaction = handleChange(filter, transactionList);
-    console.log(filteredTransaction);
 
     setTransaction(filteredTransaction);
   };
 
   const handleForm = (newExpense) => {
-    onSubmit(newExpense, transaction, setTransaction);
+    onSubmit(newExpense, setTransaction);
+  };
+
+  const deleteFunc = (_id) => {
+    handleDelete(_id, setTransaction);
   };
 
   return (
     <div className=" max-w-md mx-auto p-6 bg-slate-100 shadow-lg rounded-lg">
       {<Header transactions={transaction} />}
+      <ExpenseChart transactions={transaction} />
       <ExpenseFilter onFilterChange={handleFilterChange} />
-      <ExpenseList
-        transactions={transaction}
-        onDelete={(id) => handleDelete(id, setTransaction)}
-      />
+      <ExpenseList transactions={transaction} onDelete={deleteFunc} />
       <ExpenseForm handleSubmit={handleForm} />
     </div>
   );
