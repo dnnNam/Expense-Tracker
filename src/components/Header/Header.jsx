@@ -28,7 +28,7 @@ function Header(props) {
   return (
     <div className="bg-none">
       <h2 className="text-sm font-semiblod text-center">Expense Tracker</h2>
-      <div className="text-sm pt-10">YOUR BALANCE</div>
+      <div className="text-sm pt-5">YOUR BALANCE</div>
       <h3 className="text-xl font  mb-3">
         {balance.toLocaleString("vi-VN")} VND
       </h3>

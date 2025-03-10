@@ -29,7 +29,6 @@ function ExpenseForm(props) {
 
     handleSubmit(newExpense);
     // reset
-
     setAmount("");
     setCategory("");
     setDate("");

@@ -21,3 +21,12 @@ export const propsTypeItem = PropTypes.shape({
 export const propsTypeHeader = PropTypes.shape({
   transactions: PropTypes.func.isRequired,
 });
+
+export const propsTypeChart = PropTypes.shape({
+  transactions: PropTypes.array.isRequired,
+});
+
+export const propTypesBarChart = PropTypes.shape({
+  incomeData: PropTypes.array.isRequired,
+  expenseData: PropTypes.array.isRequired,
+});

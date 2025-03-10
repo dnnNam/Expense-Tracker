@@ -10,6 +10,7 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
+import { propTypesBarChart } from "../../expenseType";
 
 ChartJS.register(
   CategoryScale,
@@ -19,11 +20,6 @@ ChartJS.register(
   Tooltip,
   Legend
 );
-
-BarChart.propTypes = {
-  incomeData: PropTypes.array.isRequired,
-  expenseData: PropTypes.array.isRequired,
-};
 
 function BarChart(props) {
   const { incomeData, expenseData } = props;
@@ -74,4 +70,5 @@ function BarChart(props) {
   return <Bar data={data} options={options} />;
 }
 
+BarChart.propTypes = propTypesBarChart;
 export default BarChart;

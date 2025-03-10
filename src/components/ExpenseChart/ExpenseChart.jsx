@@ -1,10 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import BarChart from "./BarChart";
-
-ExpenseChart.propTypes = {
-  transactions: PropTypes.array.isRequired,
-};
+import { propsTypeChart } from "../../expenseType";
 
 function ExpenseChart(props) {
   const { transactions } = props;
@@ -40,5 +37,7 @@ function ExpenseChart(props) {
     </div>
   );
 }
+
+ExpenseChart.propTypes = propsTypeChart;
 
 export default ExpenseChart;
