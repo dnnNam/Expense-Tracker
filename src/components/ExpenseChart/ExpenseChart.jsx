@@ -36,7 +36,7 @@ function ExpenseChart(props) {
         Expense Tracker Dashboard
       </h2>
       <div className="border-b border-gray-900 mb-5"></div>
-      {/* <BarChart incomeData={incomeData} expenseData={expenseData} /> */}
+      <BarChart incomeData={incomeData} expenseData={expenseData} />
     </div>
   );
 }
