@@ -14,7 +14,9 @@ function ExpenseForm(props) {
     if (!date || !category || !amount) return;
 
     const [year, day, month] = date.split("-");
-    const formattedDate = `${year}-${month}-${day}`;
+
+    const formattedDate = `${year}-${day}-${month}`;
+    console.log(formattedDate);
 
     const type = ["Salary", "Freelance"].includes(category)
       ? "income"
@@ -48,7 +50,7 @@ function ExpenseForm(props) {
           value={date}
           onChange={(e) => setDate(e.target.value)}
           required
-          className=" border-gray-300 rounded-lg p-2 w-full focus:ring-2 focus:ring-blue-400 [&::-webkit-calendar-picker-indicator]:hidden "
+          className=" border-gray-300 rounded-lg p-2 w-full focus:ring-2  [&::-webkit-calendar-picker-indicator]:hidden focus:ring-blue-400 "
         ></input>
       </div>
       <div className="mb-4">
@@ -80,7 +82,7 @@ function ExpenseForm(props) {
       </div>
       <button
         type="submit"
-        className="bg-blue-500 text-white p-2 rounded mt-3 w-full"
+        className="bg-blue-500 text-white p-2 rounded mt-3 w-full hover:bg-blue-700"
       >
         Add New Transaction
       </button>
